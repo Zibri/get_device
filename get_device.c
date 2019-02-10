@@ -1,5 +1,5 @@
 /*
-Get physical device and mount point of a file or directory.
+Get physical device from file or directory name.
 By Zibri <zibri AT zibri DOT org>
 */
 
@@ -46,12 +46,11 @@ int get_device(char *name)
       token = strtok(NULL, " -:");
       token = strtok(NULL, " -:");
       printf("%s", token);
-      token = strtok(sline, " ");  // ID
-      token = strtok(NULL, " ");   // Parent ID
-      token = strtok(NULL, " ");   // Major:Minor # could be splitted with token = strtok(NULL, ":");
-      token = strtok(NULL, " ");   // Parent mount point
-      printf("test:>%s<\n",token);
-      token = strtok(NULL, " ");   // Mount point
+      token = strtok(sline, " ");       // ID
+      token = strtok(NULL, " ");        // Parent ID
+      token = strtok(NULL, " ");        // Major:Minor
+      token = strtok(NULL, " ");        // Parent mount point
+      token = strtok(NULL, " ");        // Mount point
       printf(" (%s)\n", token);
       break;
     }
