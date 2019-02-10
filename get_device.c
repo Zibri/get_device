@@ -48,7 +48,7 @@ int get_device(char *name)
       printf("%s", token);
       token = strtok(sline, " ");  // ID
       token = strtok(NULL, " ");   // Parent ID
-      token = strtok(NULL, " ");   // Major:Minor
+      token = strtok(NULL, " ");   // Major:Minor # could be splitted with token = strtok(NULL, ":");
       token = strtok(NULL, " ");   // Parent mount point
       printf("test:>%s<\n",token);
       token = strtok(NULL, " ");   // Mount point
